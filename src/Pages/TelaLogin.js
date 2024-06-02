@@ -7,17 +7,20 @@ import Container from "../components/Container"
 import Input from "../components/Input"
 import Botao from "../components/Botao"
 import Textoh2 from "../components/Textoh2"
+import { useNavigation } from '@react-navigation/native';
+import { AuthContext } from '../../App'; 
 
 
 export default TelaLogin = () => {
+
+  const { signIn } = React.useContext(AuthContext);
   return(
     <Container>
-      <Header title="Cadastro/Login" goBack={"func"}/>
       <Input label="Email"/>
       <Input label="Senha" span="A senha deve ter pelo menos 8 caracteres."/>
       <View style={styles.container}>
         <Botao title="Recuperar Senha"  />
-        <Botao title="Login" preto />        
+        <Botao onPress={() => signIn()} title="Login" preto />        
       </View>
 
       <Textoh2 texto="Ou se cadastre:"/>
