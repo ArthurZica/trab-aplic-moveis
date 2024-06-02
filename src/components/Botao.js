@@ -6,9 +6,10 @@ export default Botao = ({preto,onPress,title}) => {
   return(
     <View style={styles.container}>
       <Button 
-        style={[styles.botao, { borderColor: preto ? '#FFF' : '#000' }]}
+        style={[styles.botao, { 
+        borderColor: preto ? '#000' : '#000' }]}
         buttonColor={preto ? '#FFF' : '#000' }
-        color={preto ? "#000" : "#FFF"}
+        textColor={preto ? "#000" : "#FFF"}
         mode="contained"
         uppercase={false}
         onPress={onPress}
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
   },
   botao: {
     width: '100%',    
+    height: 40,
     borderWidth: 1,
     borderRadius: 5,
   },

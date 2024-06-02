@@ -1,4 +1,5 @@
 import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 //sera q n da pra soh editar?
 import { Card } from 'react-native-paper';
 //teste
@@ -7,9 +8,11 @@ import TelaLogin from "./src/Pages/TelaLogin"
 
 export default function App() {
   return (
-    <SafeAreaView >      
-      <TelaLogin/>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView >      
+        <TelaLogin/>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 const styles = StyleSheet.create({
